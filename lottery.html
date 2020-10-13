@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+		<script language="javascript">
+		n1 = Math.floor(Math.random() * 47 +1);
+		n2 = Math.floor(Math.random() * 47 +1);
+		n3 = Math.floor(Math.random() * 47 +1);
+		n4 = Math.floor(Math.random() * 47 +1);
+		n5 = Math.floor(Math.random() * 47 +1);
+		ln = Math.floor(Math.random() * 17 + 1);
+
+		numbers = [n1, n2, n3, n4, n5];
+		numbers.sort((a,b)=> a-b);
+		counter = 0;
+
+		 rand_nums = [" 28", " 20", " 31", " 42", " 43"];
+		 prompt("Enter winning numbers seperated by a space: ", rand_nums + " ");
+		 ball = prompt("Enter Lucky Ball number", "13");
+		  for (var i = 0; i < numbers.length; i++) {
+		 	for (var j = 0; j < rand_nums.length; j++) {
+		 		if ((rand_nums[j]) == (numbers[i])){
+		 			counter++;
+
+		 		}
+		 	}
+		 } 
+	
+		 document.write("The quick pick numbers are: ")
+
+		for (i = 0; i < rand_nums.length;i++){
+		 	document.write(rand_nums[i]);
+		}
+		 document.write("<br>" + "The lucky ball number is " + ball + "<br>" )
+		
+		 document.write("<br>" + "The winning numbers are: ")
+		 for (i=0; i < numbers.length;i++){
+		 	document.write(numbers[i] + " ");
+		 }
+		  document.write("<br>" + "The lucky ball number is " + ln)
+
+		 prize = 0; 
+		 if (counter == 0 && ln == ball){
+		 	prize = 4;
+		 }
+		 if (counter == 1 && ln == ball){
+		 	prize = 6;
+		 }
+		 if (counter == 2){
+		 	prize = 3;
+		 	if (ln == ball){
+		 		prize = 25;
+		 	}
+		 }
+		 if (counter == 3){
+		 	prize = 20;
+		 	if (ln == ball){
+		 		prize = 150;
+		 	}
+		 }
+		 if (counter == 4){
+		 	prize = 200;
+		 	if (ln == ball){
+		 		prize = 5000;
+		 	}
+		 }
+		 if (counter == 5){
+		 	prize = 25000;
+		 	if (ln == ball){
+		 		prize = 7000;
+		 	}
+		 }
+		 if (counter > 0 || (counter == 0 && ln == ball)){
+		 	document.write("<br>" +"You win! Your payout is $" + prize)
+		 }
+
+		 	
+
+		</script>	
+
+</body>
+</html>
